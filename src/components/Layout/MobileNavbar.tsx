@@ -19,12 +19,12 @@ const MobileNavbar = ({ setShowMenu }: { setShowMenu: Dispatch<SetStateAction<bo
     })
     return (
         <div ref={overlayRef} onClick={closeMenu} className={styles.container}>
-            <nav>
-                <Link href="/" passHref><h5 className={router.asPath == "/" ? styles.active : ''}><span className={styles.number}>00</span>Home</h5></Link>
-                <Link href="/destination" passHref><h5 className={router.asPath == "/destination" ? styles.active : ''}><span className={styles.number}>01</span>Destination</h5></Link>
-                <Link href="/crew" passHref><h5 className={router.asPath == "/crew" ? styles.active : ''}><span className={styles.number}>02</span>Crew</h5></Link>
-                <Link href="/technology" passHref><h5 className={router.asPath == "/technology" ? styles.active : ''}><span className={styles.number}>03</span>Technology</h5></Link>
-            </nav>
+            <ul>
+                <Link href="/" passHref><li className={router.asPath == "/" ? styles.active : ''}><span className={styles.number}>00</span>Home</li></Link>
+                <Link href="/destination" passHref><li className={router.asPath == "/destination" ? styles.active : ''}><span className={styles.number}>01</span>Destination</li></Link>
+                <Link href="/crew" passHref><li className={router.asPath == "/crew" ? styles.active : ''}><span className={styles.number}>02</span>Crew</li></Link>
+                <Link href="/technology" passHref><li className={router.asPath == "/technology" ? styles.active : ''}><span className={styles.number}>03</span>Technology</li></Link>
+            </ul>
         </div>
     )
 }
