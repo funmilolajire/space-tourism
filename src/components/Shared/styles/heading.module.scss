@@ -1,0 +1,21 @@
+@import '../../../styles/helpers/config.scss';
+
+.heading {
+    @extend %heading5;
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+    color: $primary-colour;
+
+    span {
+        font-weight: 700;
+        color: transparentize($color: $primary-colour, $amount: 0.75);
+    }
+}
+
+@media all and (max-width:650px) {
+    .heading {
+        text-align: center;
+        gap: 1.8rem;
+    }
+}

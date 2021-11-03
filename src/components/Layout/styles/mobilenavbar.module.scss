@@ -1,0 +1,55 @@
+@import '../../../styles/helpers/config.scss';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: calc($navbar-index + 500);
+
+    nav {
+        background: rgba(255, 255, 255, 0.04);
+        -webkit-backdrop-filter: blur(81.5485px);
+        backdrop-filter: blur(81.5485px);
+        width: 70%;
+        height: 100%;
+        padding: 11.8rem 3.2rem 3.2rem;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 3.2rem;
+        position: relative;
+        margin-left: auto;
+
+        h5 {
+            @extend %navtext;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            position: relative;
+            cursor: pointer;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+
+            .number {
+                font-weight: 700;
+            }
+
+            &.active {
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    background: $primary-colour;
+                    height: 3.1rem;
+                    width: 4px;
+                }
+            }
+        }
+    }
+}

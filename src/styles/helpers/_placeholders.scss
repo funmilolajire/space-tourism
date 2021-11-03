@@ -1,0 +1,96 @@
+// typography
+%heading1 {
+    @include typography($primary-heading-font, 15rem, 17.2rem, uppercase);
+
+    @media all and (max-width:1100px) {
+        @include typography($primary-heading-font, 15rem, 15rem, uppercase);
+    }
+
+    @media all and (max-width:650px) {
+        @include typography($primary-heading-font, 8rem, 10rem, uppercase);
+    }
+}
+
+%heading2 {
+    @include typography($primary-heading-font, 10rem, 11.46rem, uppercase);
+
+    @media all and (max-width:1100px) {
+        @include typography($primary-heading-font, 8rem, 9.2rem, uppercase);
+    }
+
+    @media all and (max-width:650px) {
+        @include typography($primary-heading-font, 5.6rem, 6.4rem, uppercase);
+    }
+}
+
+%heading3 {
+    @include typography($primary-heading-font, 5.6rem, 6.4rem, uppercase);
+
+    @media all and (max-width:1100px) {
+        @include typography($primary-heading-font, 4rem, 4.6rem, uppercase);
+    }
+
+    @media all and (max-width:650px) {
+        @include typography($primary-heading-font, 2.4rem, 2.8rem, uppercase);
+    }
+}
+
+%heading4 {
+    @include typography($primary-heading-font, 3.2rem, 3.7rem, uppercase);
+
+    @media all and (max-width:1100px) {
+        letter-spacing: 2px;
+    }
+
+    @media all and (max-width:650px) {
+        @include typography($primary-heading-font, 2rem, 2.3rem, uppercase);
+        letter-spacing: 1.25px;
+    }
+}
+
+%heading5 {
+    @include typography($secondary-heading-font, 2.8rem, 3.4rem, uppercase, $tertiary-colour);
+    letter-spacing: 4.725px;
+
+    @media all and (max-width:1100px) {
+        @include typography($secondary-heading-font, 2rem, 2.4rem, uppercase, $tertiary-colour);
+        letter-spacing: 3.38px;
+    }
+
+    @media all and (max-width:650px) {
+        @include typography($secondary-heading-font, 1.6rem, 1.9rem, uppercase, $tertiary-colour);
+        letter-spacing: 2.7px;
+    }
+}
+
+%subheading1 {
+    @include typography($primary-heading-font, 2.8rem, 3.2rem, uppercase);
+}
+
+%subheading2 {
+    @include typography($secondary-heading-font, 1.4rem, 1.7rem, uppercase, $tertiary-colour);
+    letter-spacing: 2.3625px;
+}
+
+%navtext {
+    @include typography($secondary-heading-font, 1.6rem, 1.9rem, uppercase);
+    letter-spacing: 2.7px;
+
+    @media all and (max-width:650px) {
+        @include typography($secondary-heading-font, 1.4rem, 1.7rem, uppercase);
+        letter-spacing: 2.4px;
+    }
+}
+
+
+%primarytypography {
+    @include typography($primary-regular-font, 1.8rem, 3.2rem, none, $tertiary-colour);
+
+    @media all and (max-width:1100px) {
+        @include typography($primary-regular-font, 1.6rem, 2.8rem, none, $tertiary-colour);
+    }
+
+    @media all and (max-width:650px) {
+        @include typography($primary-regular-font, 1.5rem, 2.5rem, none, $tertiary-colour);
+    }
+}

@@ -1,0 +1,136 @@
+@import '../../../styles/helpers/config.scss';
+
+.container {
+    padding: 38.7rem 16.5rem 13.1rem;
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        @include background('/assets/home/background-home-desktop.jpg');
+        opacity: 1;
+    }
+
+    .left {
+        width: 45rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        h5 {
+            @extend %heading5;
+        }
+
+        h1 {
+            @extend %heading1;
+        }
+    }
+
+    .right {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 27.4rem;
+        height: 27.4rem;
+        background: $primary-colour;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 45rem;
+                height: 45rem;
+                background: transparentize($color: $primary-colour, $amount: 0.9);
+                border-radius: 50%;
+            }
+        }
+
+        h4 {
+            @extend %heading4;
+            color: $secondary-colour;
+        }
+    }
+}
+
+@media all and (max-width:1250px) {
+    .container {
+        padding: 28.7rem 12rem 10rem;
+
+        .left {
+            width: 45rem;
+            gap: 2.4rem;
+        }
+
+        .right {
+            width: 27.4rem;
+            height: 27.4rem;
+
+            &:hover {
+                &::before {
+                    width: 45rem;
+                    height: 45rem;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:1100px) {
+    .container {
+        padding: 20.2rem 0 9rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15.6rem;
+
+        &::before {
+            @include background('/assets/home/background-home-tablet.jpg');
+            opacity: 1;
+        }
+
+        .left {
+            text-align: center;
+            justify-content: center;
+            gap: 2.4rem;
+        }
+
+        .right {
+            width: 24.2rem;
+            height: 24.2rem;
+
+            &:hover {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:650px) {
+    .container {
+        padding: 11.2rem 2.4rem 4.8rem;
+        gap: 8.1rem;
+
+        &::before {
+            @include background('/assets/home/background-home-mobile.jpg');
+            opacity: 1;
+        }
+
+        .left {
+            gap: 1.6rem;
+            width: 100%;
+        }
+
+        .right {
+            width: 15rem;
+            height: 15rem;
+        }
+    }
+}

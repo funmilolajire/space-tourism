@@ -1,0 +1,21 @@
+@mixin typography($family, $size, $line-height, $text-transform:none, $colour:#fff, $weight:400) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+    color: $colour;
+    text-transform: $text-transform;
+}
+
+@mixin background($background) {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('#{$background}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    z-index: 0;
+}

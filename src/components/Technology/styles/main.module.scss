@@ -1,0 +1,217 @@
+@import '../../../styles/helpers/config.scss';
+
+.container {
+    padding: 21.2rem 0 10.1rem 16.65rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        @include background('/assets/technology/background-technology-desktop.jpg');
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 8rem;
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 3.2rem;
+                position: relative;
+                z-index: 1;
+
+                button {
+                    width: 8rem;
+                    height: 8rem;
+                    border: 1px solid transparentize($color: $primary-colour, $amount: 0.75);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: transparent;
+                    cursor: pointer;
+                    @extend %heading4;
+
+                    &:focus {
+                        outline: 1px solid transparent;
+                    }
+
+                    &:hover {
+                        border: 1px solid transparentize($color: $primary-colour, $amount: 0);
+                    }
+
+                    &.active {
+                        background: $primary-colour;
+                        color: $secondary-colour;
+                    }
+                }
+            }
+
+            section {
+                max-width: 47rem;
+
+                h5 {
+                    @extend %navtext;
+                    color: $tertiary-colour;
+                }
+
+                h3 {
+                    @extend %heading3;
+                    margin: 1.1rem 0 1.7rem;
+                }
+
+                p {
+                    width: 44.4rem;
+                }
+            }
+        }
+
+        .image {
+            width: 51.5rem;
+            height: 52.7rem;
+            position: relative;
+
+            &.landscape {
+                display: none;
+            }
+
+            img {}
+        }
+    }
+}
+
+@media all and (max-width:1250px) {
+    .container {
+        padding: 21.2rem 0 10.1rem 11.65rem;
+
+        .content {
+            .text {
+                gap: 4rem;
+            }
+        }
+    }
+}
+
+@media all and (max-width:1100px) {
+    .container {
+        padding: 13.6rem 3.9rem 9.7rem;
+
+        &::before {
+            @include background('/assets/technology/background-technology-tablet.jpg');
+        }
+
+        .content {
+            margin: 0 -3.9rem;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5.6rem;
+
+            .text {
+                flex-direction: column;
+                gap: 4.4rem;
+                text-align: center;
+                align-items: center;
+
+                .buttons {
+                    flex-direction: row;
+                    gap: 1.6rem;
+
+                    button {
+                        width: 6rem;
+                        height: 6rem;
+                        font-size: 2.4rem;
+                        line-height: 2.8rem;
+                        letter-spacing: 1.5px;
+                    }
+                }
+
+                section {
+                    max-width: 47rem;
+
+                    h3 {
+                        margin: 1.6rem 0;
+                    }
+
+                    p {
+                        width: 45.8rem;
+                    }
+                }
+            }
+
+            .image {
+                margin-top: 6rem;
+                width: 100%;
+                height: 31rem;
+                position: relative;
+
+                &.portrait {
+                    display: none;
+                }
+
+                &.landscape {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:650px) {
+    .container {
+        padding: 8.8rem 2.4rem 8.1rem;
+        align-items: center;
+
+        &::before {
+            @include background('/assets/technology/background-technology-mobile.jpg');
+        }
+
+        .content {
+            margin: 0 -2.4rem;
+            gap: 3.4rem;
+
+            .text {
+                gap: 2.6rem;
+                padding: 0 2.4rem;
+
+                .buttons {
+                    button {
+                        width: 4rem;
+                        height: 4rem;
+                        font-size: 1.6rem;
+                        line-height: 1.8rem;
+                        letter-spacing: 1px;
+                        text-align: center;
+                    }
+                }
+
+                section {
+                    max-width: 100%;
+                    width: 100%;
+
+                    h3 {
+                        margin: 0.9rem 0 1.6rem;
+                    }
+
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .image {
+                margin-top: 3.2rem;
+                height: 17rem;
+            }
+        }
+    }
+}

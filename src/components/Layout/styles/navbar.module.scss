@@ -1,0 +1,153 @@
+@import '../../../styles/helpers/config.scss';
+
+.container {
+    padding: 4rem 0 0 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: $navbar-index;
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    .image {
+        width: 4.8rem;
+        height: 4.8rem;
+        position: relative;
+    }
+
+    .menu_icon {
+        display: none;
+    }
+
+    nav {
+        background: rgba(255, 255, 255, 0.04);
+        -webkit-backdrop-filter: blur(81.5485px);
+        backdrop-filter: blur(81.5485px);
+        width: 83rem;
+        height: 9.6rem;
+        padding-left: 12.3rem;
+        display: flex;
+        align-items: center;
+        gap: 4.8rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 47.3rem;
+            background: transparentize($color: $primary-colour, $amount: 0.75);
+            left: -44.3rem;
+        }
+
+        h5 {
+            @extend %navtext;
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+
+            .number {
+                font-weight: 700;
+            }
+
+            &.active,
+            &:hover {
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    background: $primary-colour;
+                    height: 3px;
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                &::before {
+                    background: transparentize($color: $primary-colour, $amount: 0.5);
+                }
+            }
+
+            &.active {
+                &:hover {
+                    &::before {
+                        background: transparentize($color: $primary-colour, $amount: 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:1250px) {
+    .container {
+
+        nav {
+            width: 70rem;
+            padding-left: 7rem;
+
+            &::before {
+                width: 32.3rem;
+                left: -28.3rem;
+            }
+        }
+    }
+}
+
+@media all and (max-width:1100px) {
+    .container {
+        padding: 0 0 0 3.9rem;
+
+        nav {
+            width: 45rem;
+            gap: 3.7rem;
+            justify-content: center;
+            padding-left: 0;
+
+            &::before {
+                display: none;
+            }
+
+            h5 {
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+                letter-spacing: 2.3625px;
+
+                .number {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:650px) {
+    .container {
+        padding: 2.4rem;
+
+        .image {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .menu_icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            z-index: calc($navbar-index + 501);
+            color: $primary-colour;
+        }
+    }
+}

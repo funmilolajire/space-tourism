@@ -1,0 +1,217 @@
+@import '../../../styles/helpers/config.scss';
+
+.container {
+    padding: 21.2rem 0 0 16.65rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        @include background('/assets/crew/background-crew-desktop.jpg');
+    }
+
+    .content {
+        display: flex;
+        gap: 2.5rem;
+
+        .text {
+            margin-top: 15.4rem;
+            width: 61.4rem;
+            margin-bottom: 9.4rem;
+
+            h4 {
+                @extend %heading4;
+                opacity: 0.5;
+            }
+
+            h3 {
+                @extend %heading3;
+                margin: 1.5rem 0 2.7rem;
+            }
+
+            p {
+                width: 44.4rem;
+            }
+
+            .bottom {
+                display: flex;
+                align-items: center;
+                gap: 2.4rem;
+                margin-top: 12rem;
+
+                button {
+                    background: $primary-colour;
+                    opacity: 0.17;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    mix-blend-mode: normal;
+                    transition: 0.25s ease-in opacity;
+
+                    &:focus {
+                        outline: 1px solid transparent;
+                    }
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .image {
+            width: 40%;
+            position: relative;
+
+            img {
+
+                &.crew {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:1250px) {
+    .container {
+        padding: 21.2rem 0 0 11.65rem;
+    }
+}
+
+@media all and (max-width:1100px) {
+    .container {
+        padding: 13.6rem 3.9rem 0;
+
+        &::before {
+            @include background('/assets/crew/background-crew-tablet.jpg');
+        }
+
+        .content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 4rem;
+
+            .text {
+                text-align: center;
+                margin-top: 6rem;
+                width: 100%;
+                margin-bottom: 0;
+
+                h4 {
+                    font-size: 2.4rem;
+                    line-height: 2.8rem;
+                }
+
+                h3 {
+                    margin: 0.8rem 0 1.6rem;
+                }
+
+                p {
+                    margin: 0 auto;
+                    width: 67%;
+                }
+
+                .bottom {
+                    justify-content: center;
+                    gap: 1.6rem;
+                    margin-top: 4rem;
+
+                    button {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+
+            .image {
+                width: 70%;
+                height: 53.2rem;
+
+                img {
+
+                    &.crew {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width:650px) {
+    .container {
+        padding: 8.8rem 2.4rem 10.4rem;
+        align-items: center;
+
+        &::before {
+            @include background('/assets/crew/background-crew-mobile.jpg');
+        }
+
+        .content {
+            flex-direction: column-reverse;
+            gap: 0;
+
+            .text {
+                margin-top: 0;
+                display: flex;
+                flex-direction: column;
+
+                h4 {
+                    order: 2;
+                    font-size: 1.6rem;
+                    line-height: 1.8rem;
+                }
+
+                h3 {
+                    order: 3;
+                    margin: 0.8rem 0 1.6rem;
+                }
+
+                p {
+                    order: 4;
+                    margin: 0 auto;
+                    width: 100%;
+                }
+
+                .bottom {
+                    order: 1;
+                    justify-content: center;
+                    gap: 1.6rem;
+                    padding: 3.2rem 0;
+                    margin: 0;
+                    border-top: 1px solid #383b4b;
+
+                    button {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+
+            .image {
+                margin-top: 3.2rem;
+                width: 70%;
+                height: 22.3rem;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+}
